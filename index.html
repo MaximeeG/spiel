@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Valentine's Day Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landingPage">
+        <h1>Happy Valentine's Day!</h1>
+        <h1 style="font-size: 10px;">
+            
+            <img src="heart.png" style="width: 20px; height: 20px;">
+        </h1>
+        <p>Choose your player:</p>
+        <button id="startButton">Eva</button>
+    </div>
+
+    <!-- Game Page (initially hidden) -->
+    <div id="gamePage" class="hidden">
+        <div id="score">Score: 0</div>
+        <div id="lives">
+            <img src="heart.png" class="life" alt="Life">
+            <img src="heart.png" class="life" alt="Life">
+            <img src="heart.png" class="life" alt="Life">
+        </div>
+        <div id="gameArea">
+            <img id="player" src="fighter.png" alt="Player">
+        </div>
+        <!-- Game Over Message (Hidden Initially) -->
+        <div id="gameOverScreen" class="hidden">
+            <h1 style="font-size: 30px;">Game Over!</h1>
+            <h1 style="font-size: 10px;"> Even the best and hottest Karate fighter will reach their limit!</h1>
+            <h1 style="font-size: 10px;">
+                But you are still good enough to be my valentine 
+                <img src="heart.png" style="width: 20px; height: 20px;">
+            </h1>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="restartButton">Restart</button>
+        </div>
+        <!-- Touch Controls for Mobile -->
+        <div id="controls">
+            <button id="leftButton"><</button>
+            <button id="rightButton">></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

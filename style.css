@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffb6c1; /* Cotton candy rose color for the body background */
+    font-family: 'Press Start 2P', cursive; /* Use the pixel font */
+    font-weight: normal; /* Reset font weight */
+    text-align: center;
+}
+
+#landingPage {
+    display: block; /* Show landing page by default */
+}
+
+.hidden {
+    display: none !important; /* 🔥 Ensure elements are hidden */
+}
+
+#gamePage {
+    display: none; /* Hide game page initially */
+}
+
+#gamePage:not(.hidden) {
+    display: block !important; /* 🔥 Ensure game page becomes visible */
+}
+
+
+h1 {
+    font-size: 24px;
+    color: #ff0000; /* Red color for Valentine's Day */
+    margin-bottom: 20px;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #ff0000; /* Red button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+#gameArea {
+    position: relative;
+    width: 90vw;
+    max-width: 300px;
+    height: 70vh;
+    background-color: #ffcccb;
+    border: 2px solid #000;
+    overflow: hidden;
+    margin-bottom: 100px; /* Moves the game area up by 5 pixels */
+}
+
+#player {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Adjust to your image's width */
+    height: 97px; /* Adjust to your image's height */
+    background-color: transparent; /* Optional: Remove if not needed */
+}
+
+.obstacle {
+    position: absolute;
+    width: 30px; /* Adjust to your image's width */
+    height: 30px; /* Adjust to your image's height */
+    background-color: transparent; /* Remove the red background */
+    background-image: url('heart.png'); /* Add the heart image */
+    background-size: cover; /* Ensure the image fits within the dimensions */
+    top: -30px; /* Adjust based on the height of the image */
+}
+
+.lover {
+    position: absolute;
+    width: 60px; /* Adjust to your image's width */
+    height: 81px; /* Adjust to your image's height */
+    background-color: transparent;
+    background-image: url('lover.png'); /* Add the lover image */
+    background-size: cover; /* Ensure the image fits within the dimensions */
+    top: -30px; /* Start above the game area */
+}
+
+
+/* Style for the lives container */
+#lives {
+    position: absolute;
+    top: 10px;
+    right: 5%; /* Adjust for smaller screens */
+    display: flex;
+    gap: 5px; /* Space between hearts */
+    z-index: 10;
+}
+
+/* Adjust heart size for different screens */
+#lives img {
+    width: 5vw; /* 5% of viewport width */
+    max-width: 50px; /* Limit size */
+    height: auto;
+}
+
+/* Style for the score */
+#score {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    font-size: 3vw; /* Responsive font size */
+    max-font-size: 50px; /* Don't make it too big */
+    color: red;
+    z-index: 10;
+}
+
+/* 📱 Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    #lives {
+        right: 10px;
+        gap: 3px; /* Reduce spacing */
+    }
+
+    #lives img {
+        width: 7vw; /* Slightly larger on small screens */
+        max-width: 25px;
+    }
+
+    #score {
+        font-size: 4vw;
+        left: 10px;
+    }
+}
+
+#gameOverScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5); /* Dark background */
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+    color: red; /* Red text for game over */
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    width: 100%;
+    max-width: 300px;
+    z-index: 100;
+}
+
+#restartButton {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#restartButton:hover {
+    background-color: darkred;
+}
+
+
+/* Fixed position for buttons */
+#controls {
+    position: fixed; /* Always stays at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgba(0, 0, 0, 0.0); /* Slight transparency */
+    padding: 10px 0;
+    z-index: 100;
+}
+
+/* Adjust button size for different screens */
+#controls button {
+    font-size: 24px;
+    padding: 15px 30px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    #gameArea {
+        height: 65vh; /* Reduce height to ensure buttons fit */
+    }
+
+    #controls button {
+        font-size: 5vw;
+        padding: 10px 20px;
+    }
+}
+
+#controls button:active {
+    background: darkred;
+}
