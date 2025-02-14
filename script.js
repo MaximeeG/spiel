@@ -72,7 +72,7 @@
             obstacleTop += speed;
             obstacle.style.top = obstacleTop + 'px';
 
-            if (obstacleTop > 500) {
+            if (obstacleTop > gameArea.offsetHeight) { // eigentlich 500
                 gameArea.removeChild(obstacle);
                 obstacles.splice(i, 1);
                 score++;
@@ -94,7 +94,7 @@
             loverTop += speed;
             lover.style.top = loverTop + 'px';
 
-            if (loverTop > 500) {
+            if (loverTop > gameArea.offsetHeight) {
                 gameArea.removeChild(lover);
                 lovers.splice(i, 1);
             }
